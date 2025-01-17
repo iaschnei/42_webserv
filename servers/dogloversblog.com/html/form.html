@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit Form to CGI Script</title>
+</head>
+<body>
+
+<h2>Sample Form for CGI Script</h2>
+
+<form action="http://localhost:4243/dynamic/form.py" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
+
+    <label for="happy">Happy ?</label>
+    <input type="text" id="happy" name="happy"><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

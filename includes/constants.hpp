@@ -1,0 +1,13 @@
+#ifndef CONSTANTS_HPP
+# define CONSTANTS_HPP
+
+# define MAX_READ_SIZE 10000
+# define TIMEOUT_SECONDS 10
+
+enum Method { UNKNOWN, GET, POST, DELETE };
+enum URIType { DIRECTORY, FILE_TO_READ, FILE_TO_CREATE, CGI_PROGRAM };
+enum TransferType { GENERAL, CHUNKED };
+enum Status { READY, ON_HEADER, ON_BODY, ON_EXEC, COMPLETE };
+enum MultipartMode { PARSE, WRITE };
+
+#endif

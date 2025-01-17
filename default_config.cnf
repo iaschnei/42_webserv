@@ -1,0 +1,35 @@
+server {
+	host dogloversblog.com;
+	listen 4243;
+	root servers/dogloversblog.com/html;
+	index index.html;
+	error_page 404 404.html;
+	max_client_body_size 80000;
+	allowed_methods GET;
+	location /dynamic{
+		root_folder servers/dogloversblog.com/cgi-bin;
+		autoindex on;
+		cgi .py /usr/bin/python3;
+		allowed_methods GET POST;
+	}
+	location /data{
+		root_folder servers/dogloversblog.com/data;
+		allowed_methods GET POST DELETE;
+	}
+	location /old{
+		redirect new/index.html;
+		index index.html;
+		allowed_methods GET;
+	}
+}
+server {
+	host domain2.com;
+	listen 4241;
+	root servers/domain2.com/html;
+	index ouais.html;
+	max_client_body_size 1;
+	location /non{
+		index non.html;
+		allowed_methods GET DELETE;
+	}
+}
